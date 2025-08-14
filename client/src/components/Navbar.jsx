@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Sparkles } from 'lucide-react';
+import CartIcon from './CartIcon';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { path: '/', label: 'Home' },
@@ -15,6 +17,11 @@ const Navbar = () => {
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const handleCartClick = () => {
+    navigate('/cart');
+    setIsOpen(false);
+  };
 
   return (
     <nav className="navbar">
@@ -37,8 +44,11 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="nav-toggle" onClick={toggleMenu}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        <div className="nav-actions">
+          <CartIcon onClick={handleCartClick} className="nav-cart-icon" />
+          <div className="nav-toggle" onClick={toggleMenu}>
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </div>
         </div>
       </div>
     </nav>

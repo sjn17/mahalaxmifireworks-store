@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Search, SortAsc, SortDesc } from 'lucide-react';
 import useProducts from '../hooks/useProducts';
+import AddToCartButton from '../components/AddToCartButton';
 import './Products.css';
 
 const Products = () => {
@@ -106,37 +107,71 @@ const Products = () => {
   return (
     <div className="products">
       {/* Products Hero */}
-      <section className="products-hero">
-        <div className="container">
-          <h1>Our Fireworks Collection</h1>
-          <p>Discover our wide range of premium fireworks for every celebration</p>
-          
-          {/* Debug test button */}
-          <button 
-            onClick={async () => {
-              try {
-                console.log('Testing API connection...');
-                const response = await fetch('http://localhost:5000/api/products');
-                const data = await response.json();
-                console.log('API test successful:', data.length, 'products');
-                alert(`API connection successful! Found ${data.length} products.`);
-              } catch (error) {
-                console.error('API test failed:', error);
-                alert(`API test failed: ${error.message}`);
-              }
-            }}
-            style={{
-              marginTop: '1rem',
-              padding: '0.5rem 1rem',
-              background: '#28a745',
-              color: 'white',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer'
-            }}
-          >
-            Test API Connection
-          </button>
+              <section className="products-hero">
+          <div className="container">
+            <h1>Our Fireworks Collection</h1>
+            <p>Discover our wide range of premium fireworks for every celebration</p>
+            
+            {/* Debug test buttons */}
+            <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <button 
+              onClick={async () => {
+                try {
+                  console.log('Testing API connection...');
+                  const response = await fetch('http://localhost:5000/api/products');
+                  const data = await response.json();
+                  console.log('API test successful:', data.length, 'products');
+                  alert(`API connection successful! Found ${data.length} products.`);
+                } catch (error) {
+                  console.error('API test failed:', error);
+                  alert(`API test failed: ${error.message}`);
+                }
+              }}
+              style={{
+                padding: '0.5rem 1rem',
+                background: '#28a745',
+                color: 'white',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer'
+              }}
+            >
+              Test API Connection
+            </button>
+            
+            <button 
+              onClick={() => {
+                console.log('Testing cart context...');
+                // Test if we can access the cart context
+                try {
+                  const testProduct = {
+                    _id: 'test123',
+                    name: 'Test Firework',
+                    price: 100,
+                    category: 'test',
+                    image: 'https://picsum.photos/400/300?random=999'
+                  };
+                  
+                  // Try to add to cart using the hook
+                  console.log('Test product:', testProduct);
+                  alert('Check console for test product info. Try adding a real product to cart.');
+                } catch (error) {
+                  console.error('Cart context test failed:', error);
+                  alert('Cart context test failed. Check console for details.');
+                }
+              }}
+              style={{
+                padding: '0.5rem 1rem',
+                background: '#007bff',
+                color: 'white',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer'
+              }}
+            >
+              Test Cart Context
+            </button>
+          </div>
         </div>
       </section>
 
@@ -242,7 +277,7 @@ const Products = () => {
                     <p className="product-description">{product.description}</p>
                     <p className="product-price">₹{product.price}</p>
                     <div className="product-actions">
-                      <button className="btn btn-primary">Add to Cart</button>
+                      <AddToCartButton product={product} />
                       <button className="btn btn-outline">View Details</button>
                     </div>
                   </div>

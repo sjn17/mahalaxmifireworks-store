@@ -98,6 +98,18 @@
   
   /* Transitions */
   --transition-fast: 150ms ease-in-out;
+  
+  /* Background Colors */
+  --background-primary: #ffffff;
+  --background-secondary: #f8f9fa;
+  --background-hover: #e9ecef;
+  
+  /* Text Colors */
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  
+  /* Border Colors */
+  --border-color: #dee2e6;
   --transition-base: 300ms ease-in-out;
   --transition-slow: 500ms ease-in-out;
   

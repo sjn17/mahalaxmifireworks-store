@@ -72,6 +72,16 @@
   width: 80%;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-cart-icon {
+  color: white;
+}
+
 .nav-toggle {
   display: none;
   color: white;

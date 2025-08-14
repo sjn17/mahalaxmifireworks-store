@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone, MessageCircle } from 'lucide-react';
 import useProducts from '../hooks/useProducts';
+import AddToCartButton from '../components/AddToCartButton';
 import './Home.css';
 
 const Home = () => {
@@ -107,9 +108,12 @@ const Home = () => {
                       <h3>{product.name}</h3>
                       <p className="product-category">{product.category}</p>
                       <p className="product-price">₹{product.price}</p>
-                      <Link to={`/products`} className="btn btn-outline">
-                        View Details
-                      </Link>
+                      <div className="product-actions">
+                        <AddToCartButton product={product} variant="compact" />
+                        <Link to={`/products`} className="btn btn-outline">
+                          View Details
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 ))}
