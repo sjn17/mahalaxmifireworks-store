@@ -7,6 +7,7 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
+import StickyCartIcon from './components/StickyCartIcon';
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <StickyCartIcon />
         </div>
       </Router>
     </CartProvider>

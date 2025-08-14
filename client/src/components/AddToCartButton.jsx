@@ -129,11 +129,6 @@ const AddToCartButton = ({ product, className = '', variant = 'default' }) => {
     <div className={`add-to-cart-container ${className}`}>
       {showQuantity && (
         <div className="smart-quantity-controls">
-          <div className="cart-status-display">
-            <span className="current-quantity">{currentQuantity}</span>
-            <span className="quantity-label">in cart</span>
-          </div>
-          
           <div className="instant-quantity-controls">
             <button
               className="quantity-btn instant"

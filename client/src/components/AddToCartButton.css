@@ -84,29 +84,7 @@
   }
 }
 
-/* Cart Status Display */
-.cart-status-display {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem;
-  background-color: white;
-  border-radius: 8px;
-  border: 1px solid var(--border-color, #dee2e6);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
 
-.current-quantity {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary-red, #ff6b6b);
-}
-
-.quantity-label {
-  font-size: 0.9rem;
-  color: var(--text-secondary, #6c757d);
-}
 
 /* Instant Quantity Controls */
 .instant-quantity-controls {
