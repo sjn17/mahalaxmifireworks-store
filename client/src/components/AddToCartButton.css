@@ -60,6 +60,97 @@
   border: 1px solid var(--border-color, #dee2e6);
 }
 
+/* Smart Quantity Controls */
+.smart-quantity-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 1rem;
+  background-color: var(--background-secondary, #f8f9fa);
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #dee2e6);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cart Status Display */
+.cart-status-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #dee2e6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.current-quantity {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-red, #ff6b6b);
+}
+
+.quantity-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #6c757d);
+}
+
+/* Instant Quantity Controls */
+.instant-quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #dee2e6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.quantity-btn.instant {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-red, #ff6b6b);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-btn.instant:hover:not(:disabled) {
+  background-color: var(--primary-orange, #ff8e53);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.quantity-btn.instant:disabled {
+  background-color: var(--border-color, #dee2e6);
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+
 .quantity-btn {
   display: flex;
   align-items: center;

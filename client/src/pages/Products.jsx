@@ -276,10 +276,10 @@ const Products = () => {
                     <p className="product-category">{product.category}</p>
                     <p className="product-description">{product.description}</p>
                     <p className="product-price">₹{product.price}</p>
-                    <div className="product-actions">
-                      <AddToCartButton product={product} />
-                      <button className="btn btn-outline">View Details</button>
-                    </div>
+                                         <div className="product-actions">
+                       <AddToCartButton product={product} />
+                       <button className="btn btn-outline">View Details</button>
+                     </div>
                   </div>
                 </div>
               ))}

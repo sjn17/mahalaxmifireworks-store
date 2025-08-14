@@ -108,12 +108,12 @@ const Home = () => {
                       <h3>{product.name}</h3>
                       <p className="product-category">{product.category}</p>
                       <p className="product-price">₹{product.price}</p>
-                      <div className="product-actions">
-                        <AddToCartButton product={product} variant="compact" />
-                        <Link to={`/products`} className="btn btn-outline">
-                          View Details
-                        </Link>
-                      </div>
+                                             <div className="product-actions">
+                         <AddToCartButton product={product} variant="compact" />
+                         <Link to={`/products`} className="btn btn-outline">
+                           View Details
+                         </Link>
+                       </div>
                     </div>
                   </div>
                 ))}
